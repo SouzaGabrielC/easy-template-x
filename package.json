@@ -25,7 +25,8 @@
   "module": "dist/es/easy-template-x.mjs",
   "exports": {
     "require": "./dist/cjs/easy-template-x.cjs",
-    "import": "./dist/es/easy-template-x.mjs"
+    "import": "./dist/es/easy-template-x.mjs",
+    "types": "./dist/types/index.d.ts"
   },
   "typings": "dist/types/index.d.ts",
   "files": [
