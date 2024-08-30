@@ -1,0 +1,39 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+
+        // --- output --- //
+
+        "declaration": true,
+        "declarationDir": "./dist/types",
+        "outDir": "./.tmp/compiled",
+        "sourceMap": true,
+        "target": "es2022",
+        "module": "es2022",
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+
+        // --- module resolution --- //
+
+        "typeRoots" : ["./node_modules/@types","./src/@types"],
+        "moduleResolution": "node",
+        "baseUrl": ".",
+
+        // --- validation options --- //
+
+        "alwaysStrict": true,
+        "allowSyntheticDefaultImports": true,
+        "allowUnreachableCode": false,
+        "forceConsistentCasingInFileNames": true,
+        "lib": ["dom", "es2022"],
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "skipLibCheck": true,
+        "strictNullChecks": false
+    }
+}

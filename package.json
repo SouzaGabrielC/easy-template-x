@@ -23,12 +23,19 @@
   "type": "module",
   "main": "dist/cjs/easy-template-x.cjs",
   "module": "dist/es/easy-template-x.mjs",
+  "types": "dist/es/easy-template-x.d.ts",
   "exports": {
-    "require": "./dist/cjs/easy-template-x.cjs",
-    "import": "./dist/es/easy-template-x.mjs",
-    "types": "./dist/types/index.d.ts"
+    ".": {
+      "require": {
+        "default": "./dist/cjs/easy-template-x.cjs",
+        "types": "./dist/cjs/easy-template-x.d.ts"
+      },
+      "import": {
+        "default": "./dist/es/easy-template-x.mjs",
+        "types": "./dist/es/easy-template-x.d.ts"
+      }
+    }
   },
-  "typings": "dist/types/index.d.ts",
   "files": [
     "dist",
     "src"
@@ -40,8 +47,9 @@
     "test": "jest --verbose",
     "quality": "yarn typecheck && yarn lint && yarn test",
     "build-src": "rollup -c",
-    "build-types": "tsc -p tsconfig.types.json --emitDeclarationOnly",
-    "build": "yarn build-types && yarn build-src",
+    "build-types": "tsc --emitDeclarationOnly",
+    "fix-dist": "echo '{\"type\": \"module\"}' > dist/es/package.json && echo '{\"type\": \"commonjs\"}' > dist/cjs/package.json",
+    "build": "yarn build-types && yarn build-src && yarn fix-dist",
     "release": "yarn clean && yarn quality && yarn build && yarn dist-verify",
     "dist-verify": "yarn dist-verify-cjs && yarn dist-verify-es",
     "dist-verify-cjs": "cd dist-verify/cjs && npm install && node main.js",
@@ -82,6 +90,7 @@
     "rollup": "4.18.0",
     "rollup-plugin-auto-external": "2.0.0",
     "rollup-plugin-babel": "4.4.0",
+    "rollup-plugin-dts": "6.1.1",
     "rollup-plugin-node-resolve": "5.2.0",
     "typescript": "5.5.3",
     "typescript-eslint": "7.15.0"
