@@ -23,16 +23,16 @@
   "type": "module",
   "main": "dist/cjs/easy-template-x.cjs",
   "module": "dist/es/easy-template-x.mjs",
-  "types": "dist/es/easy-template-x.d.ts",
+  "types": "dist/es/easy-template-x.d.mts",
   "exports": {
     ".": {
       "require": {
         "default": "./dist/cjs/easy-template-x.cjs",
-        "types": "./dist/cjs/easy-template-x.d.ts"
+        "types": "./dist/cjs/easy-template-x.d.cts"
       },
       "import": {
         "default": "./dist/es/easy-template-x.mjs",
-        "types": "./dist/es/easy-template-x.d.ts"
+        "types": "./dist/es/easy-template-x.d.mts"
       }
     }
   },

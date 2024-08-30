@@ -39,8 +39,8 @@ export default [{
 }, {
     input: "./dist/types/index.d.ts",
     output: [
-        { file: "dist/es/easy-template-x.d.ts", format: "es" },
-        { file: "dist/cjs/easy-template-x.d.ts", format: "cjs" }
+        { file: "dist/es/easy-template-x.d.mts", format: "es" },
+        { file: "dist/cjs/easy-template-x.d.cts", format: "cjs" }
     ],
     plugins: [dts()],
 },];
